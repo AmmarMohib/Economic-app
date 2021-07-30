@@ -1,13 +1,10 @@
-
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
 }
 var items = [
- "1.jpeg"
+ "https://raw.githubusercontent.com/AmmarMohib/Economic-app/master/lib/1.jpeg"
 ];
 class MyApp extends StatelessWidget {
   @override
@@ -49,8 +46,7 @@ class Home extends StatelessWidget {
           mainAxisSpacing: 20,
           children: List.generate(items.length , (index) {
          return Padding(
-           padding: const EdgeInsets.only(left:30.0,right: 30.0,
-           ),
+           padding: const EdgeInsets.only(left:20.0,right: 20.0,top: 30.0),
            child:ClipRRect(
              borderRadius: BorderRadius.circular(10),
              child: Container(
@@ -66,9 +62,7 @@ class Home extends StatelessWidget {
                            child:ClipRRect(
              borderRadius: BorderRadius.circular(10),
                            child:
-                          Image.file(
-                            File(items[index])
-                          )
+                          Image.network(items[index],height: 100,)
                          )
                          )
                        ], 
